@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Study Planner</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>AI Study Planner</h1>
+
+    <form action="/generate" method="POST">
+
+        <input type="text" name="subjects" placeholder="Enter Subjects" required>
+
+        <input type="number" name="hours" placeholder="Study Hours Per Day" required>
+
+        <input type="text" name="weak" placeholder="Weak Subject" required>
+
+        <button type="submit">Generate Plan</button>
+
+    </form>
+
+    {% if plan %}
+    <div class="plan">
+        <h2>Your Study Plan</h2>
+        <pre>{{ plan }}</pre>
+    </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
